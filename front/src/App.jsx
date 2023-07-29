@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Cards from './components/Cards/Cards';
+import Nav from './components/Nav/Nav';
+import { useState} from 'react';
+import axios from 'axios';
+import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
+import About from './components/About/About';
+import Detail from './components/Detail/Detail';
+import Form from './components/Form/Form';
+import { useEffect } from 'react';
+
+//const URL_BASE = 'https://rym2-production.up.railway.app/api/character';
+//const API_KEY = 'key=henrym-jcutisaca';
 
 function App() {
-  const [count, setCount] = useState(0)
+   const [characters, setCharacters] = useState([]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+   const navigate = useNavigate();
+   const [access, setAccess] = useState(false);
+   const EMAIL = 'Lucas.soldierty@gmail.com';
+   const PASSWORD = 'GodSoldier3';
+   const login = (userData) => {
+      if(userData.email === EMAIL && userData.password === PASSWORD) {
+         setAccess(true);
+         navigate('/home');
+      }
+   }
+   const logout = () => {
+      setAccess(false);
+      navigate('/');
+    };
+
+   const onSearch = (id) => {
+      axios(`https://rym2-production.up.railway.app/api/character/${id}?key=henrym-jcutisaca`).then(({ data }) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }
+      });
+   }
+   
+   const onClose = (id) => {
+      setCharacters(characters.filter(character => character.id !== Number(id)))
+   }
+   
+   const location = useLocation().pathname;
+   
+   useEffect(() => {
+      if(!access) {
+      navigate('/');
+      } else if(access === true) {
+         navigate('/home')
+      }
+   },[access]);
+   console.log(access);
+   return (
+      <div className='App'>
+         {location !== '/' && <Nav onSearch={onSearch}/>}
+         <Routes>
+            <Route path='/' element={<Form login={login} logout={logout}/>}></Route>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}></Route>
+            <Route path='/about' element={<About/>}></Route>
+            <Route path='/detail/:id' element={<Detail/>}></Route>
+         </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+   );
 }
 
-export default App
+export default App;

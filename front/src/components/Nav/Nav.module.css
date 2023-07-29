@@ -1,0 +1,9 @@
+.nav{
+    background-color: black;
+    height: 3em;
+}
+.button{
+    float: left;
+    margin: 1em 1em;
+    margin-left: 1em;
+}
