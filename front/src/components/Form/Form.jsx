@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import {validation, validationPass} from "../Validation/Validation";
-import style from './Form.module.css'
+import style from './Form.module.css';
+import imageCircle from '../Images/circlelock.png'
 
 const Form = ({login}) => {
     const [userData, setUserData] = useState({
@@ -33,29 +34,36 @@ const Form = ({login}) => {
     }
     
     return(
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email:</label>
-            <input 
-                type="text" 
-                value={userData.email}
-                name="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-            />
-            {errors.email && <p className={style.warning}>{errors.email}</p>}
-            <br />
-            <label htmlFor="password">Password:</label>
-            <input 
-                type="password" 
-                value={userData.password}
-                name="password"
-                onChange={handleChange}
-                onBlur={handleBlurPass}
-            />
-            {errors.password && <p className={style.warning}>{errors.password}</p>}
-            <br />
-            <button>Submit</button>
-        </form>
+        <div className={style.background}>
+        <form className={style.form} onSubmit={handleSubmit}>
+            <p>
+            <img src={imageCircle} className={style.imageCircle}/>
+            </p>
+      <input
+        placeholder="Email"
+        className={style.loginemail}
+        type="text"
+        value={userData.email}
+        name="email"
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      {errors.email && <p className={style.warning}>{errors.email}</p>}
+      <br />
+      <input
+        placeholder="Password"
+        className={style.loginpass}
+        type="password"
+        value={userData.password}
+        name="password"
+        onChange={handleChange}
+        onBlur={handleBlurPass}
+      />
+      {errors.password && <p className={style.warning}>{errors.password}</p>}
+      <br />
+      <button className={style.submit} type="submit">Login</button>
+    </form>
+    </div>
     )
 }
 

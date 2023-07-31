@@ -8,6 +8,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
 import { useEffect } from 'react';
+import Favorites from './components/Favorites/Favorites';
 
 //const URL_BASE = 'https://rym2-production.up.railway.app/api/character';
 //const API_KEY = 'key=henrym-jcutisaca';
@@ -18,7 +19,7 @@ function App() {
    const navigate = useNavigate();
    const [access, setAccess] = useState(false);
    const EMAIL = 'Lucas.soldierty@gmail.com';
-   const PASSWORD = 'GodSoldier3';
+   const PASSWORD = 'Soldier98';
    const login = (userData) => {
       if(userData.email === EMAIL && userData.password === PASSWORD) {
          setAccess(true);
@@ -62,6 +63,7 @@ function App() {
             <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}></Route>
             <Route path='/about' element={<About/>}></Route>
             <Route path='/detail/:id' element={<Detail/>}></Route>
+            <Route path='/favorites' element={<Favorites/>}></Route>
          </Routes>
       </div>
    );
