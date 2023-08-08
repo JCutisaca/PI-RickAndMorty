@@ -32,7 +32,7 @@ function App() {
     };
 
    const onSearch = (id) => {
-      axios(`https://rym2-production.up.railway.app/api/character/${id}?key=henrym-jcutisaca`).then(({ data }) => {
+      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
