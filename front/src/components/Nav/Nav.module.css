@@ -1,9 +1,16 @@
 .nav{
-    background-color: black;
+    background-color: yellow;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Establece un valor de z-index mayor que el del video */
     height: 3em;
 }
 .button{
     float: left;
     margin: 1em 1em;
     margin-left: 1em;
+    
 }

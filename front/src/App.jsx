@@ -54,7 +54,6 @@ function App() {
          navigate('/home')
       }
    },[access]);
-   console.log(access);
    return (
       <div className='App'>
          {location !== '/' && <Nav onSearch={onSearch}/>}

@@ -3,6 +3,7 @@ import style from './Card.module.css';
 import {connect} from 'react-redux'
 import { addFav, removeFav } from "../Redux/actions";
 import { useState, useEffect } from "react";
+import hearth from '../Images/hearth.png'
 
 export function Card({id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites}) {
    const location = useLocation().pathname;
@@ -26,23 +27,25 @@ export function Card({id, name, status, species, gender, origin, image, onClose,
 
    return (
       <div className={style.card}>
+         <div className={style.screen}>
          {
          isFav 
          ? (
-            <button onClick={handleFavorite}>❤️</button>
+            <button className={style.favoritered} onClick={handleFavorite}><img src={hearth} alt="" /></button>
          ) : (
-            <button onClick={handleFavorite}>🤍</button>
+            <button className={style.favorite} onClick={handleFavorite}><img src={hearth} alt="" /></button>
             )
          }
-          {location !== '/favorites' && <button onClick={() => onClose(id)}>X</button>}
+          {location !== '/favorites' && <button className={style.close} onClick={() => onClose(id)}>❌</button>}
          <NavLink to={`/detail/${id}`}>
-         <h2>{name}</h2>
+         <img className={style.image} src={image} alt='' />
          </NavLink>
-         <h2>{status}</h2>
+         <h2>{name}</h2>
+         {/* <h2>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
-         <h2>{origin}</h2>
-         <img className={style.image} src={image} alt='' />
+         <h2>{origin}</h2> */}
+         </div>
       </div>
    );
 }

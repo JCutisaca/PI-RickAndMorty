@@ -1,6 +1,27 @@
+.container {
+  /* Fondo oscuro con transparencia */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  min-height: 100vh;
+  background-size: 50rem; /* Ajustar imagen al tamaño del contenedor */
+  background-position: center; /* Posición de la imagen centrada */
+  position: relative; /* Asegura que los elementos hijos respeten el posicionamiento */
+  overflow: hidden; /* Evita el desplazamiento (scroll) en caso de que el contenido sea más grande */
+}
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Mantén el z-index del video en -1 */
+}
+
+.card {
+  top: 3rem;
+  position: relative; /* Asegura que el z-index funcione */
+  z-index: 2; /* Establece un valor de z-index más alto que el del video */
+}
