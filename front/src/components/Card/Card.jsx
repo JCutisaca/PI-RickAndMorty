@@ -31,9 +31,9 @@ export function Card({id, name, status, species, gender, origin, image, onClose,
          {
          isFav 
          ? (
-            <button className={style.favoritered} onClick={handleFavorite}><img src={hearth} alt="" /></button>
+            <button className={style.favorite} onClick={handleFavorite}>❤️</button>
          ) : (
-            <button className={style.favorite} onClick={handleFavorite}><img src={hearth} alt="" /></button>
+            <button className={style.favorite} onClick={handleFavorite}>🤍</button>
             )
          }
           {location !== '/favorites' && <button className={style.close} onClick={() => onClose(id)}>❌</button>}

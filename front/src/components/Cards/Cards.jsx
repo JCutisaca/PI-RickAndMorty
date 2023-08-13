@@ -8,7 +8,7 @@ export default function Cards({characters, onClose}) {
 
    
    return (<div className={style.container}>
-      <video className={style.video} autoPlay loop onEnded='handleVideoEnded()'>
+      <video className={style.video} autoPlay loop>
         <source src={portal} type="video/mp4" />
       </video>
          {characters.map(({id, name, status, species, gender, origin, image}) => {

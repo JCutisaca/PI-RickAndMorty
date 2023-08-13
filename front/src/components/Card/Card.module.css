@@ -59,31 +59,20 @@
     overflow: hidden;
 }
 .favorite{
-    position: absolute;
-    top: -0.6rem;
-    left: -0.5rem; 
-    z-index: 3;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    scale: 0.4;
-}
-.favoritered{
-    position: absolute;
-    top: -0.6rem;
-    left: -0.5rem; 
-    z-index: 3;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    scale: 0.4;
-    filter: invert(106%) sepia(60%) saturate(111179%) hue-rotate(306deg) brightness(905%) contrast(21%);
+  position: absolute;
+  z-index: 3;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: transparent;
+  border: none;
+  font-size: 130%;
+  cursor: pointer;
 }
 .close {
     position: absolute;
+    z-index: 3;
     top: 0.5rem;
     right: 0.5rem;
-    z-index: 3;
     background-color: transparent;
     border: none;
     font-size: 130%;

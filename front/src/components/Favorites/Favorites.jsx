@@ -17,11 +17,11 @@ export const Favorites = ({myFavorites}) => {
 
     return (
         <div>
-            <select onChange={handleOrder} name="" id="">
+            <select className={style.button} onChange={handleOrder} name="" id="">
                 <option value="A">Ascendente</option>
                 <option value="D">Descendente</option>
             </select>
-            <select onChange={handleFilter} name="" id="">
+            <select className={style.button} onChange={handleFilter} name="" id="">
                 <option value="AllCharacters">All Characters</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
