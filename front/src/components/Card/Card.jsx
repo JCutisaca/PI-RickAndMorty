@@ -40,7 +40,7 @@ export function Card({id, name, status, species, gender, origin, image, onClose,
          <NavLink to={`/detail/${id}`}>
          <img className={style.image} src={image} alt='' />
          </NavLink>
-         <h2>{name}</h2>
+         <h2 className={style.name}>{name}</h2>
          {/* <h2>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
