@@ -3,7 +3,6 @@ import style from './Card.module.css';
 import {connect} from 'react-redux'
 import { addFav, removeFav } from "../Redux/actions";
 import { useState, useEffect } from "react";
-import hearth from '../Images/hearth.png'
 
 export function Card({id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites}) {
    const location = useLocation().pathname;

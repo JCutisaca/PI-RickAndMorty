@@ -3,6 +3,7 @@ import Card from '../Card/Card';
 import { filterCards, orderCards } from '../Redux/actions';
 import { useState } from 'react';
 import style from './Favorites.module.css'
+import rickFavorite from '../Images/rickFavorite.mp4'
 
 export const Favorites = ({myFavorites}) => {
     const [aux, setAux] = useState(false)
@@ -17,6 +18,9 @@ export const Favorites = ({myFavorites}) => {
 
     return (
         <div className={style.container}>
+            <video className={style.video} autoPlay loop>
+        <source src={rickFavorite} type="video/mp4" />
+      </video>
             <select className={style.button1} onChange={handleOrder} name="" id="">
                 <option value="A">Ascendente</option>
                 <option value="D">Descendente</option>

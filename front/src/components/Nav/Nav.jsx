@@ -13,11 +13,11 @@ const Nav = ({onSearch, logout}) => {
             <button className={style.button} onClick={() => {
             onSearch(randomId)}
             }>Id Random</button>
-            <NavLink to={('/about')}>
-            <button className={style.button}>About</button>
-            </NavLink>
             <NavLink to={('/favorites')}>
             <button className={style.button}>Favorites</button>
+            </NavLink>
+            <NavLink to={('/about')}>
+            <button className={style.button}>About</button>
             </NavLink>
             <NavLink to={('/')}>
             <button logout={logout} className={style.button}>Logout</button>

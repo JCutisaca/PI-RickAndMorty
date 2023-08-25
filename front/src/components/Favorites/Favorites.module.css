@@ -8,19 +8,36 @@
     position: relative;
     overflow: hidden;
   }
+  
+  .video {
+    position: fixed;
+    top: 0;
+    width: 120%;
+    height: 120%;
+    object-fit: contain;
+    z-index: -1;
+  }
 .button1{
-    margin-top: 2rem;
+    margin-top: 1.9rem;
     position: fixed;
     margin-left: 60%;
     z-index: 4;
+    background: rgb(0,3,255);
+    color: white;
+    border-radius: 5px;
 }
 .button2{
-    margin-top: 2rem;
+    margin-top: 1.9rem;
     position: fixed;
     margin-left: 80%;
     z-index: 4;
+    background: rgb(0,3,255);
+    color: white;
+    border-radius: 5px;
 }
 .cardfav{
     z-index: 1;
     margin-top: 3rem;
+    /* box-shadow: 0 0 10px white;
+    border-radius: 10%; */
 }
