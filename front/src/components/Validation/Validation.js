@@ -3,26 +3,26 @@ const regexNumber = /\d/;
 const errors = {};
 
 const validation = (userData) => {
-    if(!regexEmail.test(userData.email)) {
-    errors.email = 'El email ingresado no es valido';
+    if (!regexEmail.test(userData.email)) {
+        errors.email = 'The entered email is not valid';
     }
-    if(!userData.email) {
-        errors.email = 'El nombre de usuario no puede estar vacio';
+    if (!userData.email) {
+        errors.email = 'Username cannot be empty';
     }
-    if(userData.email.length > 35) {
-        errors.email = 'El email no puede tener mas de 35 caracteres'
+    if (userData.email.length > 35) {
+        errors.email = 'Email cannot exceed 35 characters'
     }
     return errors;
 }
 
 const validationPass = (userData) => {
-    if(userData.password.length < 6 || userData.password.length > 1) {
-        errors.password = 'La contraseña tiene que tener entre 6 y 10 caracteres' 
+    if (userData.password.length < 6 || userData.password.length > 1) {
+        errors.password = 'Password must be between 6 and 10 characters'
     }
-    if(!regexNumber.test(userData.password)) {
-        errors.password = 'La contraseña tiene que tener al menos un numero'
+    if (!regexNumber.test(userData.password)) {
+        errors.password = 'Password must contain at least one number'
     }
     return errors;
 }
 
-export {validation, validationPass};
+export { validation, validationPass };

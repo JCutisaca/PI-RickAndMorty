@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const getCharById = require('../controllers/getCharById');
-const {postFav} = require('../controllers/postFav');
-const {deleteFav} = require('../controllers/deleteFav')
-const {login} = require('../controllers/login');
-const {postUser} = require('../controllers/postUser')
+const { postFav } = require('../controllers/postFav');
+const { deleteFav } = require('../controllers/deleteFav')
+const { login } = require('../controllers/login');
+const { postUser } = require('../controllers/postUser')
 
 router.get("/character/:id", (req, res) => {
     getCharById(req, res)

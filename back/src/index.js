@@ -4,6 +4,6 @@ const {conn} = require('./DB_connection')
 const PORT = 3001;
 
 server.listen(PORT, () => {
-    conn.sync({force: true})
+    conn.sync({force: false})
     console.log('Server raised in port: ' + PORT);
 })

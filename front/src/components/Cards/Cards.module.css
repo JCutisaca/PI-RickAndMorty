@@ -6,7 +6,6 @@
   background-size: 50rem;
   background-position: center;
   position: relative;
-  overflow: hidden;
 }
 
 .video {
@@ -21,6 +20,16 @@
 
 .card {
   top: 3rem;
+  height: 24.5rem;
   position: relative;
   z-index: 2;
+}
+
+.cardsContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
 }

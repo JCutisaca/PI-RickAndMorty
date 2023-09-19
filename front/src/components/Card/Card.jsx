@@ -1,19 +1,19 @@
 import { NavLink, useLocation } from "react-router-dom";
 import style from './Card.module.css';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { addFav, removeFav } from "../Redux/actions";
 import { useState, useEffect } from "react";
 
-export function Card({id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites}) {
+export function Card({ id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites }) {
    const location = useLocation().pathname;
    const [isFav, setIsFav] = useState(false);
    const handleFavorite = () => {
-      if(isFav === true) {
+      if (isFav === true) {
          setIsFav(false);
          removeFav(id)
       } else {
          setIsFav(true);
-         addFav({id, name, status, species, gender, origin, image})
+         addFav({ id, name, status, species, gender, origin, image })
       }
    }
    useEffect(() => {
@@ -27,23 +27,19 @@ export function Card({id, name, status, species, gender, origin, image, onClose,
    return (
       <div className={style.card}>
          <div className={style.screen}>
-         {
-         isFav 
-         ? (
-            <button className={style.favorite} onClick={handleFavorite}>❤️</button>
-         ) : (
-            <button className={style.favorite} onClick={handleFavorite}>🤍</button>
-            )
-         }
-          {location !== '/favorites' && <button className={style.close} onClick={() => onClose(id)}>❌</button>}
-         <NavLink to={`/detail/${id}`}>
-         <img className={style.image} src={image} alt='' />
-         </NavLink>
-         <h2 className={style.name}>{name}</h2>
-         {/* <h2>{status}</h2>
-         <h2>{species}</h2>
-         <h2>{gender}</h2>
-         <h2>{origin}</h2> */}
+            {
+               isFav
+                  ? (
+                     <button className={style.favorite} onClick={handleFavorite}>❤️</button>
+                  ) : (
+                     <button className={style.favorite} onClick={handleFavorite}>🤍</button>
+                  )
+            }
+            {location !== '/favorites' && <button className={style.close} onClick={() => onClose(id)}>❌</button>}
+            <NavLink to={`/detail/${id}`}>
+               <img className={style.image} src={image} alt='' />
+            </NavLink>
+            <h2 className={style.name}>{name}</h2>
          </div>
       </div>
    );
@@ -56,10 +52,10 @@ export function mapStateToProps(state) {
 }
 
 export function mapDispatchToProps(dispatch) {
-return {
-   addFav: (character) => dispatch(addFav(character)),
-   removeFav: (id) => dispatch(removeFav(id))
-}
+   return {
+      addFav: (character) => dispatch(addFav(character)),
+      removeFav: (id) => dispatch(removeFav(id))
+   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)

@@ -1,0 +1,153 @@
+.container {
+  overflow: hidden;
+}
+
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.newContainer {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  height: 100vh;
+  overflow: hidden;
+  border: 2px white;
+  position: relative;
+  width: 100vw;
+}
+
+.left {
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.cardContainer {
+  position: relative;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  padding: 1rem;
+  filter: drop-shadow(0px 0px 25px #FFFF);
+  left: 3rem;
+}
+
+.image {
+  margin-top: 1rem;
+  width: 90%;
+  border-radius: 1rem;
+}
+
+.right {
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailContainer {
+  right: 4rem;
+  position: relative;
+  color: white;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0px 0px 25px #FFFF);
+}
+
+label {
+  justify-content: flex-start;
+  display: flex;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.video {
+  max-width: 100%;
+}
+
+h2 {
+  margin-top: 1rem;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+h3.status {
+  color: #ff5a5f;
+}
+
+h3.gender {
+  color: #00a8cc;
+}
+
+h3.species {
+  color: #a2d5f2;
+}
+
+h3.origin {
+  color: #ffc845;
+}
+
+@media (max-width: 760px) {
+  .newContainer {
+    display: flow-root;
+    overflow: auto;
+  }
+
+  .left {
+    display: flex;
+    position: relative;
+    padding: initial;
+    width: initial;
+    position: initial;
+    justify-content: center;
+  }
+
+  .cardContainer {
+    left: initial;
+    top: 3.5rem;
+  }
+
+  .right {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 3.5rem;
+    width: initial;
+  }
+
+  .detailContainer {
+    right: initial;
+    width: 67%;
+  }
+
+  .image {
+    top: initial;
+  }
+}
