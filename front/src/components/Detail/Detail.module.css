@@ -44,11 +44,17 @@
 .cardContainer {
   position: relative;
   width: 60%;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: rgb(169, 213, 234, 0.8);
+  color: black;
   border-radius: 1rem;
   padding: 1rem;
-  filter: drop-shadow(0px 0px 25px #FFFF);
+  filter: drop-shadow(0px 0px 6px #FFFF);
   left: 3rem;
+}
+
+.name {
+  font-family: monospace;
 }
 
 .image {
@@ -69,12 +75,14 @@
 .detailContainer {
   right: 4rem;
   position: relative;
-  color: white;
+  font-family: monospace;
+  background-color: rgb(169, 213, 234, 0.8);
+  color: black;
   width: 50%;
   border-radius: 1rem;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  filter: drop-shadow(0px 0px 25px #FFFF);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  filter: drop-shadow(0px 0px 6px #FFFF);
 }
 
 label {

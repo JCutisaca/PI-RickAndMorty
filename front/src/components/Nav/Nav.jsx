@@ -15,6 +15,14 @@ const Nav = ({ onSearchRandom, onSearch, logout, menuBurger, handleMenuBurger, h
     const handleChangeId = (event) => {
         setId(event.target.value)
     }
+
+    const handleEnter = (event) => {
+        if(event.keyCode === 13) {
+           onSearch(id)
+           setId('')
+        }
+     }
+
     return (
         <nav className={style.nav}>
             <NavLink to={('/home')}>
@@ -55,7 +63,7 @@ const Nav = ({ onSearchRandom, onSearch, logout, menuBurger, handleMenuBurger, h
                         navigate("/home")
                         return
                     }} className={style.inputRandom}><img src={randomIcon} className={style.imageRandom} /></button>
-                    <input value={id} onChange={handleChangeId} className={style.input} placeholder='Search Id..' type="search" />
+                    <input onKeyDown={handleEnter} value={id} onChange={handleChangeId} className={style.input} placeholder='Search Id..' type="search" />
                     <button onClick={() => {
                         if (menuBurger) {
                             handleMenuBurger()

@@ -34,6 +34,8 @@ function App() {
 
    const onSearch = async (id) => {
       try {
+         const findCharacter = characters.some(character => character.id === +id)
+         if(findCharacter) return window.alert('Character already exists')
          const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);

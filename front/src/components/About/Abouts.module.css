@@ -43,10 +43,6 @@
   border: none;
 }
 
-.button:hover {
-  transform: scale(1.1);
-}
-
 .icon {
   background: transparent;
   object-fit: contain;
@@ -78,10 +74,16 @@
 }
 
 @media (min-width: 769px) {
+  /* .button:hover {
+    transform: scale(1.1);
+  } */
   .button:hover {
     transform: scale(1.1);
     filter: drop-shadow(0px 0px 5px #ebd0ed);
     transition: .3s ease-in-out;
+  }
+  .about {
+    border-radius: 5px;
   }
 }
 

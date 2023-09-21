@@ -19,7 +19,8 @@
     position: absolute;
     height: 100vh;
     width: 100vh;
-    background-image: conic-gradient(transparent 280deg, #4fcf70 280deg, #fad648 290deg, #a767e5 300deg, #12bcfe 310deg, #f2ff00 320deg, #0006c3 360deg);
+    /* background-image: conic-gradient(transparent 280deg, #4fcf70 280deg, #fad648 290deg, #a767e5 300deg, #12bcfe 310deg, #f2ff00 320deg, #0006c3 360deg); */
+    background-image: conic-gradient(transparent 210deg, #A9D5EA 360deg);
     animation: rotar 3s linear infinite;
   }
 
@@ -88,15 +89,15 @@
 
 @keyframes shadow-animation {
   0% {
-    filter: drop-shadow(0px 0px 3px white);
+    filter: drop-shadow(0px 0px 3px #A9D5EA);
   }
 
   50% {
-    filter: drop-shadow(0px 0px 5px white);
+    filter: drop-shadow(0px 0px 5px #A9D5EA);
   }
 
   100% {
-    filter: drop-shadow(0px 0px 10px white);
+    filter: drop-shadow(0px 0px 10px #A9D5EA);
   }
 }
 

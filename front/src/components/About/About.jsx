@@ -12,7 +12,7 @@ const About = ({ menuBurger, handleMenuBurger }) => {
                 <source src={rickAbout} type="video/mp4" />
             </video>
             {!menuBurger ? <div className={style.about}>
-                <h4>About Me</h4>
+                <h4>[About Me]</h4>
                 <p>👋 Hi, I'm Lucas, a 24-year-old web developer passionate about coding.</p>
                 <p>💻 I specialize in JavaScript, HTML, CSS, React, Redux, and more. Always eager to learn and stay on the cutting edge of web development.</p>
                 <p>🌆 When I'm not coding, you'll find me exploring the city or savoring a cup of coffee.</p>

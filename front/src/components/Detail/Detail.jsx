@@ -31,7 +31,7 @@ const Detail = ({handleMenuBurger, menuBurger}) => {
                <div className={style.left}>
                   <div className={style.cardContainer}>
                   <img className={style.image} src={characters?.image} alt={characters?.name} />
-                  <h2>{characters?.name}</h2>
+                  <h2 className={style.name}>{characters?.name}</h2>
                   </div>
                </div>
                <div className={style.right}>

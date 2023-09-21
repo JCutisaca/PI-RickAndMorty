@@ -1,7 +1,9 @@
 .buttonInput {
   float: left;
   margin: 1em 1em;
-  margin-top: 0.95rem;
+  /* margin-top: 0.95rem; */
+  margin-top: 0.8rem;
+  height: 1.5rem;
   margin-left: 1em;
   border-radius: 5px;
 }
@@ -11,7 +13,7 @@
   margin: 1em 1em;
   margin-left: 1em;
   border-radius: 1%;
-  color: #fff;
+  /* color: #fff; */
   border-radius: 5px;
   font-family: 'Lato', sans-serif;
   font-size: 80%;
@@ -23,13 +25,16 @@
     7px 7px 20px 0px rgba(0, 0, 0, .1),
     4px 4px 5px 0px rgba(0, 0, 0, .1);
   outline: none;
-
   width: 4.3rem;
   height: 1.5rem;
   padding: 0;
   border: none;
-  background: rgb(0, 3, 255);
-  background: linear-gradient(0deg, rgb(6, 14, 131) 0%, rgb(6, 14, 131) 100%);
+  /* background: rgb(0, 3, 255); */
+  font-weight: 500;
+  font-family: unset;
+  color: black;
+  background: #A9D5EA;
+  /* background: linear-gradient(0deg, rgb(6, 14, 131) 0%, rgb(6, 14, 131) 100%); */
 }
 
 .button:hover {
@@ -46,7 +51,7 @@
   right: 0;
   height: 2px;
   width: 0;
-  background: black;
+  background: #A9D5EA;
   box-shadow:
     -1px -1px 5px 0px #fff,
     7px 7px 20px 0px #0003,

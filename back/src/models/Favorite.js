@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
          allowNull: false
       },
       status: {
-         type: DataTypes.ENUM('Alive', 'Dead', 'Unknown'),
+         type: DataTypes.ENUM('Alive', 'Dead', 'unknown'),
          allowNull: false
       },
       species: {

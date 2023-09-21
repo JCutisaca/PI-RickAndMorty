@@ -62,11 +62,14 @@ html {
   padding: .25rem;
   transition: 250ms background ease-in;
 
-  &:hover,
-  &:focus {
-    background: white;
-    color: black;
-    transition: 250ms background ease-in;
+  @media (min-width: 768px) {
+
+    &:hover,
+    &:focus {
+      background: white;
+      color: black;
+      transition: 250ms background ease-in;
+    }
   }
 }
 
