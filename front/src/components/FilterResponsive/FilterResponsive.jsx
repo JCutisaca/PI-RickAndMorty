@@ -1,6 +1,6 @@
 import style from './FilterResponsive.module.css'
 import { useDispatch } from 'react-redux'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useDebugValue } from 'react'
 import { filterCards, orderCards } from '../Redux/actions'
 import { filterCharacters, orderCharacters } from '../Redux/reducer'
 
@@ -8,7 +8,7 @@ import { filterCharacters, orderCharacters } from '../Redux/reducer'
 const FilterResponsive = () => {
 
     const dispatch = useDispatch()
-
+    
     const [orderValue, setOrderValue] = useState('A');
     const [filterValue, setFilterValue] = useState('AllCharacters');
 
