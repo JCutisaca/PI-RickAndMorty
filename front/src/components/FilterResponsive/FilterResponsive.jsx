@@ -1,5 +1,5 @@
 import style from './FilterResponsive.module.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { filterCards, orderCards } from '../Redux/actions'
 import { filterCharacters, orderCharacters } from '../Redux/reducer'
