@@ -18,7 +18,7 @@ function App() {
    const login = async (userData) => {
       try {
          const { email, password } = userData;
-         const URL = 'http://localhost:3001/rickandmorty/login/';
+         const URL = '/rickandmorty/login/';
          const { data } = await axios(URL + `?email=${email}&password=${password}`)
          const { access } = data;
          setAccess(data);
@@ -36,7 +36,7 @@ function App() {
       try {
          const findCharacter = characters.some(character => character.id === +id)
          if(findCharacter) return window.alert('Character already exists')
-         const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+         const { data } = await axios(`/rickandmorty/character/${id}`);
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          }
@@ -53,7 +53,7 @@ function App() {
          }
       }
       try {
-         const { data } = await axios(`http://localhost:3001/rickandmorty/character/${randomId}`);
+         const { data } = await axios(`/rickandmorty/character/${randomId}`);
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          }

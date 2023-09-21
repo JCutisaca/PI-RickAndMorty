@@ -70,7 +70,7 @@ const Form = ({ login }) => {
         try {
             setCreateError()
             const { email, password } = postUser;
-            const URL = 'http://localhost:3001/rickandmorty/login/';
+            const URL = '/rickandmorty/login/';
             const { data } = await axios.post(URL, {
                 email,
                 password

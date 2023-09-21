@@ -10,7 +10,7 @@ const Detail = ({handleMenuBurger, menuBurger}) => {
    const { id } = useParams();
    const [characters, setCharacter] = useState({});
    useEffect(() => {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+      axios(`/rickandmorty/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacter(data);
          } else {
