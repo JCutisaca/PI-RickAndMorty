@@ -2,8 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import style from './Detail.module.css'
-import rickDetail from '../Images/rickDetail.mp4'
 import MenuBurger from "../MenuBurger/MenuBurger";
+import portalRick from '../Images/portalRick.jpg'
 
 
 const Detail = ({handleMenuBurger, menuBurger}) => {
@@ -24,9 +24,7 @@ const Detail = ({handleMenuBurger, menuBurger}) => {
       <div className={style.container}>
             {menuBurger? <MenuBurger handleMenuBurger={handleMenuBurger}></MenuBurger> : null}
          <div>
-            <video className={style.video} autoPlay loop>
-               <source src={rickDetail} type="video/mp4" />
-            </video>
+            <img src={portalRick} className={style.video} alt="" />
             {!menuBurger? <div className={style.newContainer}>
                <div className={style.left}>
                   <div className={style.cardContainer}>

@@ -1,11 +1,11 @@
 import { connect, useDispatch } from 'react-redux';
 import Card from '../Card/Card';
 import { filterCards, orderCards } from '../Redux/actions';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import style from './Favorites.module.css'
-import rickFavorite from '../Images/rickFavorite.mp4'
 import MenuBurger from '../MenuBurger/MenuBurger';
 import FilterResponsive from '../FilterResponsive/FilterResponsive';
+import portalRick from '../Images/portalRick.jpg'
 
 export const Favorites = ({ myFavorites, menuBurger, handleMenuBurger, filterResponsive }) => {
 
@@ -20,9 +20,7 @@ export const Favorites = ({ myFavorites, menuBurger, handleMenuBurger, filterRes
     }
     return (
         <div className={style.container}>
-            <video className={style.video} autoPlay loop>
-                <source src={rickFavorite} type="video/mp4" />
-            </video>
+            <img src={portalRick} className={style.video} />
             <div className={style.containerSelect}>
                 <select className={style.button1} onChange={handleOrder} name="" id="">
                     <option value="A">Ascendente</option>

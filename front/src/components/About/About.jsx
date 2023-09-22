@@ -1,16 +1,13 @@
 import style from './Abouts.module.css'
-import rickAbout from '../Images/rickAbout.mp4'
 import gitIcon from '../Images/gitIcon.png'
 import emailIcon from '../Images/emailIcon.png'
 import linkedIcon from '../Images/linkedIcon.png'
 import MenuBurger from '../MenuBurger/MenuBurger'
-
+import newAbout from '../Images/newAbout.png'
 const About = ({ menuBurger, handleMenuBurger }) => {
     return (
         <div className={style.container}>
-            <video className={style.video} autoPlay loop>
-                <source src={rickAbout} type="video/mp4" />
-            </video>
+            <img src={newAbout} className={style.video}  alt="" />
             {!menuBurger ? <div className={style.about}>
                 <h4>[About Me]</h4>
                 <p>👋 Hi, I'm Lucas, a 24-year-old web developer passionate about coding.</p>

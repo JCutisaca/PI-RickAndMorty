@@ -1,14 +1,12 @@
 import style from './Cards.module.css'
 import Card from "../Card/Card";
-import portal from '../Images/Portal.mp4'
 import MenuBurger from '../MenuBurger/MenuBurger';
+import portalRick from '../Images/portalRick.jpg'
 
 export default function Cards({ menuBurger, handleMenuBurger, characters, onClose }) {
 
    return (<div className={style.container}>
-      <video className={style.video} autoPlay loop>
-         <source src={portal} type="video/mp4" />
-      </video>
+      <img className={style.video} src={portalRick} alt="" />
       {menuBurger ? <MenuBurger menuBurger={menuBurger} handleMenuBurger={handleMenuBurger}></MenuBurger> : null}
       <div className={style.cardsContainer}>
          {!menuBurger ? characters.map(({ id, name, status, species, gender, origin, image }) => {
