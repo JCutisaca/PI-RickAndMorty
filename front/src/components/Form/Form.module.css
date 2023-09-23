@@ -63,12 +63,13 @@ html {
   transition: 250ms background ease-in;
 
   @media (min-width: 768px) {
-
-    &:hover,
-    &:focus {
-      background: white;
-      color: black;
-      transition: 250ms background ease-in;
+    &:not(:disabled) {
+      &:hover,
+      &:focus {
+        background: white;
+        color: black;
+        transition: 250ms background ease-in;
+      }
     }
   }
 }
@@ -79,4 +80,9 @@ html {
 
 .text {
   color: white;
+}
+
+.submit:disabled {
+  background-color: rgb(0, 0, 0, 0.5);
+  cursor: not-allowed;
 }
