@@ -205,7 +205,7 @@ const Form = ({ login }) => {
                     {errorsPost.password && <p className={style.warning}>{errorsPost.password}</p>}
 
                     <br />
-                    <button disabled={!(Object.keys(errors).length === 0)} className={style.submit} type="submit">Create</button>
+                    <button disabled={!(Object.keys(errorsPost).length === 0)} className={style.submit} type="submit">Create</button>
                     <p className={style.text}>Already registered? <a className={style.text} href="#" onClick={() => { setShowLoginForm(true); setShowCreateForm(false) }}>Sig In</a></p>
                 </form>
             }
