@@ -3,8 +3,23 @@ import style from './Form.module.css';
 import imageCircle from '../Images/circlelock.png'
 import rickCreate from '../Images/rickCreate.png'
 import axios from "axios";
+import LoginGoogle from '../LoginGoogle/LoginGoogle'
+import { gapi } from "gapi-script";
 
 const Form = ({ login }) => {
+
+    const clientId = "521123783257-d2stfpejph6ok0djqqpm8e396dsg10c5.apps.googleusercontent.com"
+
+    useEffect(() => {
+        function start() {
+          gapi.client.init({
+            clientId: clientId,
+            scope: "",
+          });
+        }
+        gapi.load("client:auth2", start);
+      });
+
     const [userData, setUserData] = useState({
         email: '',
         password: ''
@@ -177,6 +192,7 @@ const Form = ({ login }) => {
                     <br />
                     <button disabled={!(Object.keys(errors).length === 0)} className={style.submit} type="submit">Login</button>
                     <p className={style.text}>Not registered? <a className={style.text} href="#" onClick={() => { setShowLoginForm(false); setShowCreateForm(true); }}>Create an account</a></p>
+                    <LoginGoogle></LoginGoogle>
                 </form>
             }
             {showCreateForm &&
