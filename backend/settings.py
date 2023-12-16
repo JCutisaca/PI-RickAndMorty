@@ -24,8 +24,6 @@ db_user = os.getenv("DB_USER")
 db_host = os.getenv("DB_HOST")
 db_password = os.getenv("DB_PASSWORD")
 db_port = os.getenv("DB_PORT")
-backend_url = os.getenv("BACKEND_URL")
-frontend_url = os.getenv("FRONTEND_URL")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,8 +146,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    backend_url,
-    frontend_url
+    os.getenv('BACKEND_URL'),
+    os.getenv('FRONTEND_URL')
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
