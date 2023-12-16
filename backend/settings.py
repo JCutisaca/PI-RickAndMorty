@@ -38,7 +38,10 @@ SECRET_KEY = 'django-insecure-8-i85$r1k4u4k&z3wf@w33yh_$9#sthssy&-z#xbj*i8pofyoq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    os.getenv('BACKEND_URL'),
+    os.getenv('FRONTEND_URL')
+]
 
 
 # Application definition
