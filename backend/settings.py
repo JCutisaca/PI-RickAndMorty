@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from dotenv import load_dotenv
+import pymysql
 
 from pathlib import Path
 
 load_dotenv()
+pymysql.install_as_MySQLdb()
 
 db_name = os.getenv("DB_NAME")
 db_user = os.getenv("DB_USER")
