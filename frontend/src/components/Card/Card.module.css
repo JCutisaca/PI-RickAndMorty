@@ -1,0 +1,108 @@
+.card {
+  z-index: 1;
+  margin-top: 1.5rem;
+  width: 15.5rem;
+  height: 21.5rem;
+  background-color: #101010;
+  border-radius: 10%;
+  box-shadow: 16px 14px 20px #0000008c;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 761px) {
+  .card:before {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100vh;
+    /* background-image: conic-gradient(transparent 280deg, #4fcf70 280deg, #fad648 290deg, #a767e5 300deg, #12bcfe 310deg, #f2ff00 320deg, #0006c3 360deg); */
+    background-image: conic-gradient(transparent 210deg, #A9D5EA 360deg);
+    animation: rotar 3s linear infinite;
+  }
+
+  @keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    height: 21rem;
+    width: 15rem;
+    background-color: #101010;
+    border-radius: 10%;
+    box-shadow: inset 16px 14px 20px #0000008c;
+    ;
+  }
+}
+
+.image {
+  position: relative;
+  width: 14.5rem;
+  height: 14.5rem;
+  z-index: 2;
+  margin-top: -1.5rem;
+  border-radius: 10%;
+  overflow: hidden;
+}
+
+.favorite {
+  position: absolute;
+  z-index: 3;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: transparent;
+  border: none;
+  font-size: 130%;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  z-index: 3;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: transparent;
+  border: none;
+  font-size: 130%;
+  cursor: pointer;
+}
+
+.name {
+  position: relative;
+  z-index: 3;
+  height: 3.5rem;
+  font-family: 'Avalors Personal Use';
+  color: #FFFFFF;
+  text-shadow: 0 0 4px white;
+}
+
+@keyframes shadow-animation {
+  0% {
+    filter: drop-shadow(0px 0px 3px #A9D5EA);
+  }
+
+  50% {
+    filter: drop-shadow(0px 0px 5px #A9D5EA);
+  }
+
+  100% {
+    filter: drop-shadow(0px 0px 10px #A9D5EA);
+  }
+}
+
+@media (max-width: 760px) {
+  .card {
+    animation: shadow-animation 2s linear infinite;
+  }
+}

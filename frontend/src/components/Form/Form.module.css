@@ -1,0 +1,88 @@
+body,
+html {
+  height: 100%;
+}
+
+.background {
+  background: url('https://www.xtrafondos.com/wallpapers/personajes-asustados-rick-and-morty-9380.jpg') center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.form {
+  border-radius: 5%;
+  background: rgba(34, 34, 34, 0.9);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  min-height: 10rem;
+  margin: auto;
+  max-width: 17rem;
+  padding: .5rem;
+  margin-top: 50px;
+}
+
+.imageCircle {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.loginemail,
+.loginpass {
+  background: transparent;
+  border: 0 solid;
+  border-bottom: 1px solid;
+  color: white;
+  display: block;
+  margin: 1rem;
+  padding: .5rem;
+  transition: 250ms background ease-in;
+  width: calc(100% - 3rem);
+
+  &:focus {
+    background: white;
+    color: black;
+    transition: 250ms background ease-in;
+  }
+}
+
+.submit {
+  border-radius: 10%;
+  transform: scale(1.2);
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  display: block;
+  margin: 1rem auto;
+  min-width: 2px;
+  padding: .25rem;
+  transition: 250ms background ease-in;
+
+  @media (min-width: 768px) {
+    &:not(:disabled) {
+      &:hover,
+      &:focus {
+        background: white;
+        color: black;
+        transition: 250ms background ease-in;
+      }
+    }
+  }
+}
+
+.warning {
+  color: red;
+}
+
+.text {
+  color: white;
+}
+
+.submit:disabled {
+  background-color: rgb(0, 0, 0, 0.5);
+  cursor: not-allowed;
+}
