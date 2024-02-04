@@ -1,4 +1,4 @@
-pip==23.3.1
+python-3.11.7
 asgiref==3.7.2
 certifi==2023.11.17
 charset-normalizer==3.3.2
