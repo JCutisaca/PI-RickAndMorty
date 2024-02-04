@@ -2,13 +2,16 @@
   "builds": [{
     "src": "backend/wsgi.py",
     "use": "@vercel/python",
-    "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.7" }
+    "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.*" }
   }],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "backend/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "PIP_VERSION": "23.3.1"
+  }
 }
 
