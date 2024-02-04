@@ -2,10 +2,20 @@
 
 # Create your views here.
 import requests
-from rest_framework import viewsets
+from rest_framework import viewsets, serializers
 from rest_framework.response import Response
 
+class CharacterSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    status = serializers.CharField()
+    name = serializers.CharField()
+    species = serializers.CharField()
+    origin = serializers.CharField()
+    image = serializers.CharField()
+    gender = serializers.CharField()
+
 class Get_character_by_id_view(viewsets.ModelViewSet):
+    serializer_class = CharacterSerializer
     def retrieve(self, request, pk=None):
         api_url = f"https://rickandmortyapi.com/api/character/{pk}"
         response = requests.get(api_url)
