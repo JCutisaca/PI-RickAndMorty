@@ -8,7 +8,8 @@ import { Provider } from 'react-redux'
 import axios from 'axios'
 
 // axios.defaults.baseURL = 'http://localhost:3001'
-axios.defaults.baseURL = 'https://pi-rickandmorty-production.up.railway.app/'
+const backend = import.meta.env.VITE_BACKEND_URL;
+axios.defaults.baseURL = backend;
 
 ReactDOM.render(
   <Provider store={store}>
