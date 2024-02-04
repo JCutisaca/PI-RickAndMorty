@@ -10,7 +10,7 @@ const UserModel = require('./models/User')
 // );
 const sequelize = new Sequelize(
    DB_DEPLOY,
-   { logging: false, native: false }
+   { logging: false, native: false, dialectModule: require('pg') }
 );
 
 FavoriteModel(sequelize);
