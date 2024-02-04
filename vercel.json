@@ -9,9 +9,6 @@
       "src": "/(.*)",
       "dest": "backend/wsgi.py"
     }
-  ],
-  "env": {
-    "PIP_VERSION": "23.3.1"
-  }
+  ]
 }
 
